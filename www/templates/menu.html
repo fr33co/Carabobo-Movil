@@ -1,0 +1,43 @@
+<ion-side-menus enable-menu-with-back-views="false">
+    <ion-side-menu-content>
+        <ion-nav-bar class="bar-assertive">
+            <ion-nav-back-button></ion-nav-back-button>
+            <ion-nav-buttons side="right">
+                <button class="button button-icon button-clear ion-navicon" menu-toggle="right">
+                </button>
+            </ion-nav-buttons>
+        </ion-nav-bar>
+        <ion-nav-view name="menuContent"></ion-nav-view>
+    </ion-side-menu-content>
+
+    <ion-side-menu side="right">
+        <ion-header-bar class="expanded bar bar-header" style="background: #0e0e0e;">
+            <img src="img/logo.png" class="avatar motion spin fade">
+            <div class="menu-bottom"><center>CARABOBO MOVÍL</center></div>
+        </ion-header-bar>
+        <ion-content><br><br><br><br><br><br>
+            <ion-list>
+                <ion-item nav-clear menu-close href="#/app/home">
+                    Inicio</ion-item>
+                <ion-item nav-clear menu-close href="#/app/aragua">
+                    Desarrollo Social</ion-item>
+                <ion-item nav-clear menu-close href="#/app/venezuela">
+                    Salud</ion-item>
+                <ion-item nav-clear menu-close href="#/app/mundo">
+                    Deporte</ion-item>
+                <ion-item nav-clear menu-close href="#/app/cultura">
+                    Educación</ion-item>
+                <ion-item nav-clear menu-close href="#/app/deportes">
+                    Seguridad Ciudadana</ion-item>
+                <ion-item nav-clear menu-close href="#/app/culture">
+                    Cultura</ion-item>
+                <ion-item nav-clear menu-close href="#/app/institucionales">
+                    Institucional</ion-item>
+                <ion-item nav-clear menu-close href="#/app/infraestructura">
+                    Infraestructura y Vialidad</ion-item>
+                <ion-item nav-clear menu-close ng-click="login()">
+                    Quienes Somos</ion-item>
+            </ion-list>
+        </ion-content>
+    </ion-side-menu>
+</ion-side-menus>

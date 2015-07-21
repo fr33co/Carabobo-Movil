@@ -1,0 +1,13 @@
+<ion-view title="{{ TITLE }}">
+	<ion-content class="padding">
+		<ion-list class="item-text-wrap">
+			<ion-item ng-repeat="entry in entries" class="item item-thumbnail-left card" href="#app/entry/{{$index}}" vertial-text-aling="center">
+			
+				<img ng-src="{{entry.img}}">
+				<p style="margin-botom: 14px; color: #FFF" > <span style="background-color:#306bba; border-radius: 4px; padding: 4px;">{{entry.categories[0]}}</span> </p>
+				<h2>{{entry.title}}</h2>
+				 <p>{{entry.publishedDate}}</p>
+			</ion-item>
+		</ion-list>
+	</ion-content>
+</ion-view>
