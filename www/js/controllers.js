@@ -25,7 +25,6 @@ angular.module('starter.controllers', [])
             $ionicLoading.hide();
             if(!result.error) {
 				$rootScope.entries = result.feed.entries;
-                $rootScope.img = result.feed.entries.getElementbyTagName('img');
                 console.log('move');
 				$location.path('/app/home');
             } else {
