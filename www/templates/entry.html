@@ -1,7 +1,7 @@
 <ion-view title="{{entry.title}}">
     <ion-content class="padding">
         <h2>{{entry.title}}</h2>
-		<p><b>Publicado:</b> {{entry.publishedDate | date: dd-MM-yyyy}}</p>
+		<p><b>Publicado:</b> {{entry.publishedDate.substring(4,22)}}</p>
 		<div ng-bind-html="entry.content" style="text-align: justify;"></div>
 		<button class="button button-block button-positive" ng-click="readEntry(entry)">
 			Ir a la Pagina Web
