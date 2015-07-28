@@ -206,4 +206,10 @@ p {
     left: initial !important;
     right: 16px !important;
     top: 16px !important;
+    
 }/* Empty. Add your own CSS if you like */
+
+img {
+    width: 100%;
+    height: auto;
+}
