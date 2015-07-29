@@ -1,4 +1,4 @@
-angular.module('starter', ['ionic', 'ngCordova','starter.controllers'])
+angular.module('starter', ['ionic', 'ngCordova','starter.controllers', 'starter.filter'])
 
 .run(function($ionicPlatform, $rootScope, $location) {
     $ionicPlatform.ready(function() {
