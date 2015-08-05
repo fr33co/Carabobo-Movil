@@ -16,6 +16,49 @@ angular.module('starter.filter', [])
 			var year = txt.substring(8,12);
 			var hora = txt.substring(13,18);
 
+		switch(hora.substring(0,2)){
+			case '12':
+				hora = hora+" PM"
+				break;
+			case '13':
+				hora = "01"+hora.substring(2,5)+" PM"
+				break;
+			case '14':
+				hora = "02"+hora.substring(2,5)+" PM"
+				break;
+			case '15':
+					hora = "03"+hora.substring(2,5)+" PM"
+					break;
+		  case '16':
+				  hora = "04"+hora.substring(2,5)+" PM"
+					break;
+			case '17':
+					hora = "05"+hora.substring(2,5)+" PM"
+					break;
+			case '18':
+					hora = "06"+hora.substring(2,5)+" PM"
+					break;
+			case '19':
+				hora = "07"+hora.substring(2,5)+" PM"
+					break;
+			case '20':
+				hora = "08"+hora.substring(2,5)+" PM"
+				break;
+			case '21':
+					hora = "09"+hora.substring(2,5)+" PM"
+					break;
+			case '22':
+					hora = "10"+hora.substring(2,5)+" PM"
+					break;
+			case '23':
+					hora = "11"+hora.substring(2,5)+" PM"
+					break;
+			case '00':
+					hora = "12"+hora.substring(2,5)+" AM"
+					break;
+			default:
+			  hora = hora + " AM"
+		}
 			if(mes==='Aug'){
 				return dia +"/08/" + year +" " + hora;
 			}else if (mes==='Jul'){
