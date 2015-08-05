@@ -2367,7 +2367,9 @@ code, kbd, pre, samp {
  * Improve readability of pre-formatted text in all browsers.
  */
 pre {
-  white-space: pre-wrap; }
+  white-space: pre-wrap;
+  font-family: Helvetica Neue, RobotoDraft,Roboto,sans-serif;
+}
 
 /**
  * Set consistent quote types.

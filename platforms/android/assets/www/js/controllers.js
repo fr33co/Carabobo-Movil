@@ -20,13 +20,12 @@ angular.module('starter.controllers', [])
         console.log('googles init called');
         var feed = new google.feeds.Feed("http://carabobo.gob.ve/feed/");
         feed.setNumEntries(10);
-
         feed.load(function(result) {
             $ionicLoading.hide();
             if(!result.error) {
                 $rootScope.entries = result.feed.entries;
                 console.log('move');
-                $location.path('/app/home');
+               $location.path('/app/home');
             } else {
                 console.log("Error - "+result.error.message);
             }
@@ -51,7 +50,7 @@ angular.module('starter.controllers', [])
             if(!result.error) {
                 $rootScope.entries = result.feed.entries;
                 console.log('move');
-                $location.path('/app/home');
+               $location.path('/app/home');
             } else {
                 console.log("Error - "+result.error.message);
             }
