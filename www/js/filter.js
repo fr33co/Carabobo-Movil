@@ -84,8 +84,6 @@ angular.module('starter.filter', [])
 			}else if (mes==='Dec'){
 				return dia +"/12/" + year +" " + hora;
 			}
-
-			//return retorno;
 		}
 
 	});

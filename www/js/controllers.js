@@ -17,6 +17,10 @@ angular.module('starter.controllers', [])
     //$ionicLoading.show({ template: 'Cargando...' });
     function initialize() {
         $rootScope.TITLE = "Carabobo Movíl";
+        $rootScope.VISIBLE = false;
+        $rootScope.ocultar = function(){
+          $scope.VISIBLE = !$scope.VISIBLE;
+        }
         console.log('googles init called');
         var feed = new google.feeds.Feed("http://carabobo.gob.ve/feed/");
         feed.setNumEntries(10);

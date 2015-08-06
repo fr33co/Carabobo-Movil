@@ -1,5 +1,10 @@
 <ion-view title="Carabobo Móvil">
 	<ion-content class="padding">
+		<label class="item item-input" ng-show="VISIBLE">
+  			<i class="icon ion-search placeholder-icon"></i>
+  			<input type="search" placeholder="Busqueda">
+		</label>
+
 		<ion-list class="item-text-wrap">
 			<ion-item ng-repeat="entry in entries" class="item item-thumbnail-left card" href="#app/entry/{{$index}}">
 
