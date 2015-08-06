@@ -19,7 +19,7 @@ angular.module('starter.controllers', [])
         $rootScope.TITLE = "Carabobo Movíl";
         $rootScope.VISIBLE = false;
         $rootScope.ocultar = function(){
-          $scope.VISIBLE = !$scope.VISIBLE;
+          $rootScope.VISIBLE = !$rootScope.VISIBLE;
         }
         console.log('googles init called');
         var feed = new google.feeds.Feed("http://carabobo.gob.ve/feed/");
