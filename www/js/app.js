@@ -111,16 +111,7 @@ angular.module('starter', ['ionic', 'ngCordova','starter.controllers', 'starter.
                 controller: 'InfraestructuraCtrl'
             }
         }
-    })
-    .state('app.busqueda', {
-        url: "/busqueda",
-        views: {
-            'menuContent': {
-                templateUrl: "templates/busqueda.html"
-            }
-        }
-    })
-;
+    });
     // if none of the above states are matched, use this as the fallback
     $urlRouterProvider.otherwise('/app/home');
 });
