@@ -18,11 +18,12 @@ angular.module('starter.controllers', [])
     function initialize() {
         $rootScope.TITLE = "Carabobo Movíl";
         $rootScope.VISIBLE = false;
+        $rootScope.mostrar = function(){
+          $rootScope.VISIBLE = !$rootScope.VISIBLE;
+          }
         $rootScope.ocultar = function(){
           $rootScope.VISIBLE = !$rootScope.VISIBLE;
-          if($rootScope.VISIBLE === false){
-            $rootScope.parametro='';
-          }
+          document.getElementById("bqd").value('probando');
         }
         console.log('googles init called');
         var feed = new google.feeds.Feed("http://carabobo.gob.ve/feed/");
