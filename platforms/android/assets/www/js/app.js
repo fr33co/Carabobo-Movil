@@ -26,7 +26,7 @@ angular.module('starter', ['ionic', 'ngCordova','starter.controllers', 'starter.
         views: {
             'menuContent': {
                 templateUrl: "templates/home.html",
-                controller: "HomeCtrl"    
+                controller: "HomeCtrl"
             }
         }
     })
@@ -111,8 +111,7 @@ angular.module('starter', ['ionic', 'ngCordova','starter.controllers', 'starter.
                 controller: 'InfraestructuraCtrl'
             }
         }
-    })
-;    
+    });
     // if none of the above states are matched, use this as the fallback
     $urlRouterProvider.otherwise('/app/home');
 });

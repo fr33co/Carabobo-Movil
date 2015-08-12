@@ -20,7 +20,7 @@ angular.module('starter.controllers', [])
         $rootScope.VISIBLE = false;
         $rootScope.ocultar = function(){
           $rootScope.VISIBLE = !$rootScope.VISIBLE;
-        }
+          }
         console.log('googles init called');
         var feed = new google.feeds.Feed("http://carabobo.gob.ve/feed/");
         feed.setNumEntries(10);

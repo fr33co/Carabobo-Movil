@@ -1,8 +1,9 @@
 <ion-view title="Carabobo Móvil">
 	<ion-content class="padding">
-		<label class="item item-input" ng-show="VISIBLE">
+		<label class="item-input-inset" ng-show="VISIBLE">
 				<i class="icon ion-search placeholder-icon"></i>
-				<input type="search" name="bqd" placeholder="Busqueda" ng-model="parametro">
+				<input type="search" placeholder="Busqueda" ng-model="parametro">
+
 		</label>
 			<ion-list class="item-text-wrap">
 			<ion-item ng-repeat="entry in entries | filter:parametro" class="item item-thumbnail-left card" href="#app/entry/{{$index}}">
