@@ -21,28 +21,31 @@ angular.module('starter.controllers', [])
         $rootScope.ocultar = function(){
           $rootScope.VISIBLE = !$rootScope.VISIBLE;
           }
+        
         console.log('googles init called');
         var feed = new google.feeds.Feed("http://carabobo.gob.ve/feed/");
         feed.setNumEntries(10);
         feed.load(function(result) {
             $ionicLoading.hide();
             if(!result.error) {
+
                 $rootScope.entries = result.feed.entries;
                 console.log('move');
-               $location.path('/app/home');
+               //$location.path('/app/home');
             } else {
                 console.log("Error - "+result.error.message);
             }
         });
     }
     $ionicPlatform.ready(function() {
+
         console.log("Started up!!");
         google.load("feeds", "1",{callback:initialize});
         $ionicLoading.hide();
     });
 }])
 
-.controller('AraguaCtrl', ['$ionicPlatform', '$scope', '$rootScope', '$cordovaNetwork', '$ionicLoading', '$location', function($ionicPlatform, $scope, $rootScope, $cordovaNetwork, $ionicLoading, $location) {
+.controller('DesarrolloCtrl', ['$ionicPlatform', '$scope', '$rootScope', '$cordovaNetwork', '$ionicLoading', '$location', function($ionicPlatform, $scope, $rootScope, $cordovaNetwork, $ionicLoading, $location) {
     //$ionicLoading.show({ template: 'Cargando...' });
     function initialize() {
         $rootScope.TITLE = "Desarrollo Social";
@@ -55,7 +58,7 @@ angular.module('starter.controllers', [])
             if(!result.error) {
                 $rootScope.entries = result.feed.entries;
                 console.log('move');
-               $location.path('/app/home');
+               //$location.path('/app/home');
             } else {
                 console.log("Error - "+result.error.message);
             }
@@ -68,7 +71,7 @@ angular.module('starter.controllers', [])
     });
 }])
 
-.controller('VzlaCtrl', ['$ionicPlatform', '$scope', '$rootScope', '$cordovaNetwork', '$ionicLoading', '$location', function($ionicPlatform, $scope, $rootScope, $cordovaNetwork, $ionicLoading, $location) {
+.controller('SaludCtrl', ['$ionicPlatform', '$scope', '$rootScope', '$cordovaNetwork', '$ionicLoading', '$location', function($ionicPlatform, $scope, $rootScope, $cordovaNetwork, $ionicLoading, $location) {
     //$ionicLoading.show({ template: 'Cargando...' });
     function initialize() {
         $rootScope.TITLE = "Salud";
@@ -81,7 +84,7 @@ angular.module('starter.controllers', [])
             if(!result.error) {
                 $rootScope.entries = result.feed.entries;
                 console.log('move');
-                $location.path('/app/home');
+                //$location.path('/app/home');
             } else {
                 console.log("Error - "+result.error.message);
             }
@@ -94,7 +97,7 @@ angular.module('starter.controllers', [])
     });
 }])
 
-.controller('MundoCtrl', ['$ionicPlatform', '$scope', '$rootScope', '$cordovaNetwork', '$ionicLoading', '$location', function($ionicPlatform, $scope, $rootScope, $cordovaNetwork, $ionicLoading, $location) {
+.controller('DeporteCtrl', ['$ionicPlatform', '$scope', '$rootScope', '$cordovaNetwork', '$ionicLoading', '$location', function($ionicPlatform, $scope, $rootScope, $cordovaNetwork, $ionicLoading, $location) {
     //$ionicLoading.show({ template: 'Cargando...' });
     function initialize() {
         $rootScope.TITLE = "Deportes";
@@ -107,7 +110,7 @@ angular.module('starter.controllers', [])
             if(!result.error) {
                 $rootScope.entries = result.feed.entries;
                 console.log('move');
-                $location.path('/app/home');
+                //$location.path('/app/home');
             } else {
                 console.log("Error - "+result.error.message);
             }
@@ -120,7 +123,7 @@ angular.module('starter.controllers', [])
     });
 }])
 
-.controller('CulturaCtrl', ['$ionicPlatform', '$scope', '$rootScope', '$cordovaNetwork', '$ionicLoading', '$location', function($ionicPlatform, $scope, $rootScope, $cordovaNetwork, $ionicLoading, $location) {
+.controller('EducacionCtrl', ['$ionicPlatform', '$scope', '$rootScope', '$cordovaNetwork', '$ionicLoading', '$location', function($ionicPlatform, $scope, $rootScope, $cordovaNetwork, $ionicLoading, $location) {
     //$ionicLoading.show({ template: 'Cargando...' });
     function initialize() {
         $rootScope.TITLE = "Educación";
@@ -133,7 +136,7 @@ angular.module('starter.controllers', [])
             if(!result.error) {
                 $rootScope.entries = result.feed.entries;
                 console.log('move');
-                $location.path('/app/home');
+                //$location.path('/app/home');
             } else {
                 console.log("Error - "+result.error.message);
             }
@@ -146,7 +149,7 @@ angular.module('starter.controllers', [])
     });
 }])
 
-.controller('SportsCtrl', ['$ionicPlatform', '$scope', '$rootScope', '$cordovaNetwork', '$ionicLoading', '$location', function($ionicPlatform, $scope, $rootScope, $cordovaNetwork, $ionicLoading, $location) {
+.controller('SeguridadCtrl', ['$ionicPlatform', '$scope', '$rootScope', '$cordovaNetwork', '$ionicLoading', '$location', function($ionicPlatform, $scope, $rootScope, $cordovaNetwork, $ionicLoading, $location) {
     //$ionicLoading.show({ template: 'Cargando...' });
     function initialize() {
         $rootScope.TITLE = "Seguridad Ciudadana";
@@ -159,7 +162,7 @@ angular.module('starter.controllers', [])
             if(!result.error) {
                 $rootScope.entries = result.feed.entries;
                 console.log('move');
-                $location.path('/app/home');
+                //$location.path('/app/home');
             } else {
                 console.log("Error - "+result.error.message);
             }
@@ -185,7 +188,7 @@ angular.module('starter.controllers', [])
             if(!result.error) {
                 $rootScope.entries = result.feed.entries;
                 console.log('move');
-                $location.path('/app/home');
+                //$location.path('/app/home');
             } else {
                 console.log("Error - "+result.error.message);
             }
@@ -211,7 +214,7 @@ angular.module('starter.controllers', [])
             if(!result.error) {
                 $rootScope.entries = result.feed.entries;
                 console.log('move');
-                $location.path('/app/home');
+                //$location.path('/app/home');
             } else {
                 console.log("Error - "+result.error.message);
             }
@@ -237,7 +240,7 @@ angular.module('starter.controllers', [])
             if(!result.error) {
                 $rootScope.entries = result.feed.entries;
                 console.log('move');
-                $location.path('/app/home');
+                //$location.path('/app/home');
             } else {
                 console.log("Error - "+result.error.message);
             }

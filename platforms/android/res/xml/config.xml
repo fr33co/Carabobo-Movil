@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.ionicframework.carabobomovil785092" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="com.ionicframework.carabobomovil785092" version="0.0.2" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <preference name="loglevel" value="DEBUG" />
     <feature name="Keyboard">
         <param name="android-package" value="com.ionic.keyboard.IonicKeyboard" />
@@ -37,7 +37,8 @@
     <description>
         App para acceso a noticias del portal de la Gobernación Bolivariana de Carabobo.
     </description>
-    <author email="josemespiz@gmail.com" href="#">
+    <author email="rodriguez.hectoralejandro@gmail.com" href="http://catuche.com.ve">
+      Héctor Rodríguez Velásquez
       Angel Guadarrama
       Jose Espinoza
     </author>
@@ -49,6 +50,6 @@
     <preference name="android-minSdkVersion" value="16" />
     <preference name="BackupWebStorage" value="none" />
     <preference name="SplashScreen" value="screen" />
-    <preference name="SplashScreenDelay" value="3000" />
+    <preference name="SplashScreenDelay" value="4000" />
     <icon density="xhdpi" src="resources/android/icon/drawable-xhdpi-icon.png" />
 </widget>
