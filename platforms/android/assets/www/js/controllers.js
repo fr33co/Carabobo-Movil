@@ -45,7 +45,7 @@ angular.module('starter.controllers', [])
     });
 }])
 
-.controller('AraguaCtrl', ['$ionicPlatform', '$scope', '$rootScope', '$cordovaNetwork', '$ionicLoading', '$location', function($ionicPlatform, $scope, $rootScope, $cordovaNetwork, $ionicLoading, $location) {
+.controller('DesarrolloCtrl', ['$ionicPlatform', '$scope', '$rootScope', '$cordovaNetwork', '$ionicLoading', '$location', function($ionicPlatform, $scope, $rootScope, $cordovaNetwork, $ionicLoading, $location) {
     //$ionicLoading.show({ template: 'Cargando...' });
     function initialize() {
         $rootScope.TITLE = "Desarrollo Social";
@@ -71,7 +71,7 @@ angular.module('starter.controllers', [])
     });
 }])
 
-.controller('VzlaCtrl', ['$ionicPlatform', '$scope', '$rootScope', '$cordovaNetwork', '$ionicLoading', '$location', function($ionicPlatform, $scope, $rootScope, $cordovaNetwork, $ionicLoading, $location) {
+.controller('SaludCtrl', ['$ionicPlatform', '$scope', '$rootScope', '$cordovaNetwork', '$ionicLoading', '$location', function($ionicPlatform, $scope, $rootScope, $cordovaNetwork, $ionicLoading, $location) {
     //$ionicLoading.show({ template: 'Cargando...' });
     function initialize() {
         $rootScope.TITLE = "Salud";
@@ -97,7 +97,7 @@ angular.module('starter.controllers', [])
     });
 }])
 
-.controller('MundoCtrl', ['$ionicPlatform', '$scope', '$rootScope', '$cordovaNetwork', '$ionicLoading', '$location', function($ionicPlatform, $scope, $rootScope, $cordovaNetwork, $ionicLoading, $location) {
+.controller('DeporteCtrl', ['$ionicPlatform', '$scope', '$rootScope', '$cordovaNetwork', '$ionicLoading', '$location', function($ionicPlatform, $scope, $rootScope, $cordovaNetwork, $ionicLoading, $location) {
     //$ionicLoading.show({ template: 'Cargando...' });
     function initialize() {
         $rootScope.TITLE = "Deportes";
@@ -123,7 +123,7 @@ angular.module('starter.controllers', [])
     });
 }])
 
-.controller('CulturaCtrl', ['$ionicPlatform', '$scope', '$rootScope', '$cordovaNetwork', '$ionicLoading', '$location', function($ionicPlatform, $scope, $rootScope, $cordovaNetwork, $ionicLoading, $location) {
+.controller('EducacionCtrl', ['$ionicPlatform', '$scope', '$rootScope', '$cordovaNetwork', '$ionicLoading', '$location', function($ionicPlatform, $scope, $rootScope, $cordovaNetwork, $ionicLoading, $location) {
     //$ionicLoading.show({ template: 'Cargando...' });
     function initialize() {
         $rootScope.TITLE = "Educación";
@@ -149,7 +149,7 @@ angular.module('starter.controllers', [])
     });
 }])
 
-.controller('SportsCtrl', ['$ionicPlatform', '$scope', '$rootScope', '$cordovaNetwork', '$ionicLoading', '$location', function($ionicPlatform, $scope, $rootScope, $cordovaNetwork, $ionicLoading, $location) {
+.controller('SeguridadCtrl', ['$ionicPlatform', '$scope', '$rootScope', '$cordovaNetwork', '$ionicLoading', '$location', function($ionicPlatform, $scope, $rootScope, $cordovaNetwork, $ionicLoading, $location) {
     //$ionicLoading.show({ template: 'Cargando...' });
     function initialize() {
         $rootScope.TITLE = "Seguridad Ciudadana";

@@ -1,6 +1,6 @@
-<ion-view title="{{TITLE}}" cache-view="false">
+<ion-view title="Deporte" cache-view="false">
 	<ion-content class="padding">
-		<ion-list class="list list-inset item-text-wrap">
+		<ion-list class="item-text-wrap">
 			<ion-item ng-repeat="entry in entries" class="item item-thumbnail-left card" href="#app/entry/{{$index}}">
 					<img ng-src="{{ entry.content | urlFilter }}">
 				<p style="margin-bottom: 1em; color: #FFF" > <span style="background-color:#306bba; border-radius: 4px; padding: 4px;">{{entry.categories[0]}}</span> </p>
