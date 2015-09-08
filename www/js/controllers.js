@@ -255,7 +255,7 @@ angular.module('starter.controllers', [])
     $rootScope.notHome = true;
     $scope.index = $stateParams.index;
     $scope.entry = $rootScope.entries[$scope.index];
-    $scope.readEntry = function(e) { window.open(e.link, '_blank'); };
+    $scope.readEntry = function(e) { window.open(e.link,'_system', 'location=no'); return false;};
     
     var URL = "http://twitter.com/home?status=He%20leido%20%20esta%20noticia:%20";
     var HT = '%20%23GobiernoDeCarabobo';
