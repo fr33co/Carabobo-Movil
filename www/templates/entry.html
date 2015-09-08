@@ -3,13 +3,16 @@
         <h2>{{entry.title}}</h2>
 		<p><b>Publicado:</b> {{entry.publishedDate.substring(4,22)}}</p>
 		<div ng-bind-html="entry.content" style="text-align: justify;"></div>
-		<div class="card">
-		<button class="button button-block button-positive" ng-click="tweetEntry(entry)">
-			<i class="icon ion-social-twitter positive"></i> Compartir
+			<!--</ion-content>-->
+		<button class="button button-block button-calm" ng-click="tweetEntry(entry)">
+			<pre><i class="icon ion-social-twitter positive"></i>     Compartir en Twitter</pre>
 		</button>
-	</ion-content>
-		<button class="button button-block button-positive" ng-click="readEntry(entry)">
+		<button class="button button-block button-positive" ng-click="fbEntry(entry)">
+			<pre><i class="icon ion-social-facebook"></i>     Compartir en Facebook</pre>
+		</button>
+		<button class="button button-block button-stable" ng-click="readEntry(entry)">
 			Ir a la Pagina Web
 		</button>
+	
 	</ion-content>
 </ion-view>

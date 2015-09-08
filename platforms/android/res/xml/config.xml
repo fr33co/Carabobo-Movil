@@ -33,7 +33,7 @@
     <splash density="port-xhdpi" src="resources/android/splash/drawable-port-xhdpi-screen.png" />
     <splash density="port-xxhdpi" src="resources/android/splash/drawable-port-xxhdpi-screen.png" />
     <splash density="port-xxxhdpi" src="resources/android/splash/drawable-port-xxxhdpi-screen.png" />
-    <name>Carabobo-Movil</name>
+    <name>Carabobo Movil</name>
     <description>
         App para acceso a noticias del portal de la Gobernación Bolivariana de Carabobo.
     </description>
