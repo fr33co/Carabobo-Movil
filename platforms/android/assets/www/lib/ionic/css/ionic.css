@@ -2367,7 +2367,9 @@ code, kbd, pre, samp {
  * Improve readability of pre-formatted text in all browsers.
  */
 pre {
-  white-space: pre-wrap; }
+  white-space: pre-wrap;
+  font-family: Helvetica Neue, RobotoDraft,Roboto,sans-serif;
+}
 
 /**
  * Set consistent quote types.
@@ -3112,7 +3114,7 @@ a.subdued {
       background-image: linear-gradient(180deg, #0a9ec7, #0a9ec7 50%, transparent 50%); }
   .bar.bar-assertive {
     border-color: #e42012;
-    background-color: #ef473a;
+    background-color: #ef473a; /*#be132d*/
     background-image: linear-gradient(0deg, #e42012, #e42012 50%, transparent 50%);
     color: #fff; }
     .bar.bar-assertive .title {

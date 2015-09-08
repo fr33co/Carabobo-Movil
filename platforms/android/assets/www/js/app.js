@@ -1,4 +1,4 @@
-angular.module('starter', ['ionic', 'ngCordova','starter.controllers'])
+angular.module('starter', ['ionic', 'ngCordova','starter.controllers', 'starter.filter'])
 
 .run(function($ionicPlatform, $rootScope, $location) {
     $ionicPlatform.ready(function() {
@@ -26,7 +26,7 @@ angular.module('starter', ['ionic', 'ngCordova','starter.controllers'])
         views: {
             'menuContent': {
                 templateUrl: "templates/home.html",
-                controller: "HomeCtrl"    
+                controller: "HomeCtrl"
             }
         }
     })
@@ -40,48 +40,48 @@ angular.module('starter', ['ionic', 'ngCordova','starter.controllers'])
             }
         }
     })
-    .state('app.sports', {
-        url: "/deportes",
+    .state('app.seguridad', {
+        url: "/seguridad",
         views: {
             'menuContent': {
-                templateUrl: "templates/deportes.html",
-                controller: 'SportsCtrl'
+                templateUrl: "templates/seguridad.html",
+                controller: 'SeguridadCtrl'
             }
         }
     })
-    .state('app.venezuela', {
-        url: "/venezuela",
+    .state('app.salud', {
+        url: "/salud",
         views: {
             'menuContent': {
-                templateUrl: "templates/venezuela.html",
-                controller: 'VzlaCtrl'
+                templateUrl: "templates/salud.html",
+                controller: 'SaludCtrl'
             }
         }
     })
-    .state('app.mundo', {
-        url: "/mundo",
+    .state('app.deporte', {
+        url: "/deporte",
         views: {
             'menuContent': {
-                templateUrl: "templates/mundo.html",
-                controller: 'MundoCtrl'
+                templateUrl: "templates/deporte.html",
+                controller: 'DeporteCtrl'
             }
         }
     })
-    .state('app.aragua', {
-        url: "/aragua",
+    .state('app.desarrollo', {
+        url: "/desarrollo",
         views: {
             'menuContent': {
-                templateUrl: "templates/aragua.html",
-                controller: 'AraguaCtrl'
+                templateUrl: "templates/desarrollo.html",
+                controller: 'DesarrolloCtrl'
             }
         }
     })
-    .state('app.cultura', {
-        url: "/cultura",
+    .state('app.educacion', {
+        url: "/educacion",
         views: {
             'menuContent': {
-                templateUrl: "templates/cultura.html",
-                controller: 'CulturaCtrl'
+                templateUrl: "templates/educacion.html",
+                controller: 'EducacionCtrl'
             }
         }
     })
@@ -111,8 +111,7 @@ angular.module('starter', ['ionic', 'ngCordova','starter.controllers'])
                 controller: 'InfraestructuraCtrl'
             }
         }
-    })
-;    
+    });
     // if none of the above states are matched, use this as the fallback
     $urlRouterProvider.otherwise('/app/home');
 });
