@@ -2,41 +2,46 @@
     <ion-side-menu-content>
         <ion-nav-bar class="bar-assertive">
             <ion-nav-back-button></ion-nav-back-button>
-            <ion-nav-buttons side="right">
-                <button class="button button-icon button-clear ion-navicon" menu-toggle="right">
+            <ion-nav-buttons side="left">
+                <button class="button button-icon button-clear ion-navicon" menu-toggle="left">
                 </button>
             </ion-nav-buttons>
+            <!--<ion-nav-buttons side="right">
+            <button class="button button-icon button-clear ion-android-search" ng-hide="VISIBLE" ng-click="ocultar()"></button>
+            <button class="button button-icon button-clear ion-android-close"  ng-show="VISIBLE" ng-click="ocultar()"></button>
+          </ion-nav-buttons>-->
         </ion-nav-bar>
         <ion-nav-view name="menuContent"></ion-nav-view>
+
     </ion-side-menu-content>
 
-    <ion-side-menu side="right">
-        <ion-header-bar class="expanded bar bar-header" style="background: #0e0e0e;">
-            <img src="img/logo.png" class="avatar motion spin fade">
-            <div class="menu-bottom"><center>CARABOBO MOVÍL</center></div>
+    <ion-side-menu side="left">
+        <ion-header-bar class="expanded bar bar-header" style="background-image: url('img/fondo.png');font-family: Helvetica Neue, RobotoDraft,Roboto,sans-serif">
+            <center><img src="img/logo.png" class="avatar motion spin fade" style="border: solid 2px #fff"></center>
+            <!--<div class="menu-bottom"><center>CARABOBO MOVÍL</center></div>-->
         </ion-header-bar>
         <ion-content><br><br><br><br><br><br>
             <ion-list>
-                <ion-item nav-clear menu-close href="#/app/home">
-                    Inicio</ion-item>
-                <ion-item nav-clear menu-close href="#/app/aragua">
-                    Desarrollo Social</ion-item>
-                <ion-item nav-clear menu-close href="#/app/venezuela">
-                    Salud</ion-item>
-                <ion-item nav-clear menu-close href="#/app/mundo">
-                    Deporte</ion-item>
-                <ion-item nav-clear menu-close href="#/app/cultura">
-                    Educación</ion-item>
-                <ion-item nav-clear menu-close href="#/app/deportes">
-                    Seguridad Ciudadana</ion-item>
+                <ion-item item-icon-left nav-clear menu-close href="#/app/home">
+               <pre><i class="icon ion-home"></i>     Noticias Recientes</pre></ion-item>
+                <ion-item nav-clear menu-close href="#/app/desarrollo">
+               <pre><i class="icon ion-person-stalker"></i>     Desarrollo Social </pre></ion-item>
+                <ion-item nav-clear menu-close href="#/app/salud">
+                  <pre><i class="icon ion-medkit"></i>      Salud </pre></ion-item>
+                <ion-item nav-clear menu-close href="#/app/deporte">
+                   <pre><i class="icon ion-ios-football"></i>     Deporte </pre></ion-item>
+                <ion-item nav-clear menu-close href="#/app/educacion">
+                    <pre><i class="icon ion-university"></i>      Educación </pre></ion-item>
+                <ion-item nav-clear menu-close  href="#/app/seguridad">
+                    <pre><i class="icon ion-lock-combination"></i>      Seguridad Ciudadana </pre></ion-item>
                 <ion-item nav-clear menu-close href="#/app/culture">
-                    Cultura</ion-item>
+                    <pre><i class="icon ion-android-color-palette"></i>     Cultura </pre></ion-item>
                 <ion-item nav-clear menu-close href="#/app/institucionales">
-                    Institucional</ion-item>
-                <ion-item nav-clear menu-close href="#/app/infraestructura">
-                    Infraestructura y Vialidad</ion-item>
+                    <pre><i class="icon ion-android-desktop"></i>     Institucional </pre></ion-item>
+                <ion-item item-icon-left nav-clear menu-close href="#/app/infraestructura">
+                   <pre><i class="icon ion-android-car"></i>      Infraestructura y Vialidad </pre></ion-item>
                 <ion-item nav-clear menu-close ng-click="login()">
-                    Quienes Somos</ion-item>
+                    <pre><i class="icon ion-android-chat"></i>      Quienes Somos </pre></ion-item>
             </ion-list>
         </ion-content>
     </ion-side-menu>

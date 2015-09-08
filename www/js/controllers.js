@@ -23,25 +23,28 @@ angular.module('starter.controllers', [])
         feed.load(function(result) {
             $ionicLoading.hide();
             if(!result.error) {
+
                 $rootScope.entries = result.feed.entries;
                 console.log('move');
-               $location.path('/app/home');
+               //$location.path('/app/home');
             } else {
                 console.log("Error - "+result.error.message);
             }
         });
     }
     $ionicPlatform.ready(function() {
+
         console.log("Started up!!");
         google.load("feeds", "1",{callback:initialize});
         $ionicLoading.hide();
     });
 }])
 
-.controller('AraguaCtrl', ['$ionicPlatform', '$scope', '$rootScope', '$cordovaNetwork', '$ionicLoading', '$location', function($ionicPlatform, $scope, $rootScope, $cordovaNetwork, $ionicLoading, $location) {
+.controller('DesarrolloCtrl', ['$ionicPlatform', '$scope', '$rootScope', '$cordovaNetwork', '$ionicLoading', '$location', function($ionicPlatform, $scope, $rootScope, $cordovaNetwork, $ionicLoading, $location) {
     //$ionicLoading.show({ template: 'Cargando...' });
     function initialize() {
         $rootScope.TITLE = "Desarrollo Social";
+        $rootScope.VISIBLE = false;
         console.log('googles init called');
         var feed = new google.feeds.Feed("http://feeds.feedburner.com/gbcdesarrollosocial");
         feed.setNumEntries(10);
@@ -50,7 +53,7 @@ angular.module('starter.controllers', [])
             if(!result.error) {
                 $rootScope.entries = result.feed.entries;
                 console.log('move');
-               $location.path('/app/home');
+               //$location.path('/app/home');
             } else {
                 console.log("Error - "+result.error.message);
             }
@@ -63,10 +66,11 @@ angular.module('starter.controllers', [])
     });
 }])
 
-.controller('VzlaCtrl', ['$ionicPlatform', '$scope', '$rootScope', '$cordovaNetwork', '$ionicLoading', '$location', function($ionicPlatform, $scope, $rootScope, $cordovaNetwork, $ionicLoading, $location) {
+.controller('SaludCtrl', ['$ionicPlatform', '$scope', '$rootScope', '$cordovaNetwork', '$ionicLoading', '$location', function($ionicPlatform, $scope, $rootScope, $cordovaNetwork, $ionicLoading, $location) {
     //$ionicLoading.show({ template: 'Cargando...' });
     function initialize() {
         $rootScope.TITLE = "Salud";
+        $rootScope.VISIBLE = false;
         console.log('googles init called');
         var feed = new google.feeds.Feed("http://feeds.feedburner.com/gbcSalud");
         feed.setNumEntries(10);
@@ -75,7 +79,7 @@ angular.module('starter.controllers', [])
             if(!result.error) {
                 $rootScope.entries = result.feed.entries;
                 console.log('move');
-                $location.path('/app/home');
+                //$location.path('/app/home');
             } else {
                 console.log("Error - "+result.error.message);
             }
@@ -88,10 +92,11 @@ angular.module('starter.controllers', [])
     });
 }])
 
-.controller('MundoCtrl', ['$ionicPlatform', '$scope', '$rootScope', '$cordovaNetwork', '$ionicLoading', '$location', function($ionicPlatform, $scope, $rootScope, $cordovaNetwork, $ionicLoading, $location) {
+.controller('DeporteCtrl', ['$ionicPlatform', '$scope', '$rootScope', '$cordovaNetwork', '$ionicLoading', '$location', function($ionicPlatform, $scope, $rootScope, $cordovaNetwork, $ionicLoading, $location) {
     //$ionicLoading.show({ template: 'Cargando...' });
     function initialize() {
         $rootScope.TITLE = "Deportes";
+        $rootScope.VISIBLE = false;
         console.log('googles init called');
         var feed = new google.feeds.Feed("http://feeds.feedburner.com/gbcdeportes");
         feed.setNumEntries(10);
@@ -100,7 +105,7 @@ angular.module('starter.controllers', [])
             if(!result.error) {
                 $rootScope.entries = result.feed.entries;
                 console.log('move');
-                $location.path('/app/home');
+                //$location.path('/app/home');
             } else {
                 console.log("Error - "+result.error.message);
             }
@@ -113,10 +118,11 @@ angular.module('starter.controllers', [])
     });
 }])
 
-.controller('CulturaCtrl', ['$ionicPlatform', '$scope', '$rootScope', '$cordovaNetwork', '$ionicLoading', '$location', function($ionicPlatform, $scope, $rootScope, $cordovaNetwork, $ionicLoading, $location) {
+.controller('EducacionCtrl', ['$ionicPlatform', '$scope', '$rootScope', '$cordovaNetwork', '$ionicLoading', '$location', function($ionicPlatform, $scope, $rootScope, $cordovaNetwork, $ionicLoading, $location) {
     //$ionicLoading.show({ template: 'Cargando...' });
     function initialize() {
         $rootScope.TITLE = "Educación";
+        $rootScope.VISIBLE = false;
         console.log('googles init called');
         var feed = new google.feeds.Feed("http://feeds.feedburner.com/gbceducacion");
         feed.setNumEntries(10);
@@ -125,7 +131,7 @@ angular.module('starter.controllers', [])
             if(!result.error) {
                 $rootScope.entries = result.feed.entries;
                 console.log('move');
-                $location.path('/app/home');
+                //$location.path('/app/home');
             } else {
                 console.log("Error - "+result.error.message);
             }
@@ -138,10 +144,11 @@ angular.module('starter.controllers', [])
     });
 }])
 
-.controller('SportsCtrl', ['$ionicPlatform', '$scope', '$rootScope', '$cordovaNetwork', '$ionicLoading', '$location', function($ionicPlatform, $scope, $rootScope, $cordovaNetwork, $ionicLoading, $location) {
+.controller('SeguridadCtrl', ['$ionicPlatform', '$scope', '$rootScope', '$cordovaNetwork', '$ionicLoading', '$location', function($ionicPlatform, $scope, $rootScope, $cordovaNetwork, $ionicLoading, $location) {
     //$ionicLoading.show({ template: 'Cargando...' });
     function initialize() {
         $rootScope.TITLE = "Seguridad Ciudadana";
+        $rootScope.VISIBLE = false;
         console.log('googles init called');
         var feed = new google.feeds.Feed("http://feeds.feedburner.com/gbcSeguridadCiudadana");
         feed.setNumEntries(10);
@@ -150,7 +157,7 @@ angular.module('starter.controllers', [])
             if(!result.error) {
                 $rootScope.entries = result.feed.entries;
                 console.log('move');
-                $location.path('/app/home');
+                //$location.path('/app/home');
             } else {
                 console.log("Error - "+result.error.message);
             }
@@ -167,6 +174,7 @@ angular.module('starter.controllers', [])
     //$ionicLoading.show({ template: 'Cargando...' });
     function initialize() {
         $rootScope.TITLE = "Cultura";
+        $rootScope.VISIBLE = false;
         console.log('googles init called');
         var feed = new google.feeds.Feed("http://feeds.feedburner.com/gbcCultura");
         feed.setNumEntries(10);
@@ -175,7 +183,7 @@ angular.module('starter.controllers', [])
             if(!result.error) {
                 $rootScope.entries = result.feed.entries;
                 console.log('move');
-                $location.path('/app/home');
+                //$location.path('/app/home');
             } else {
                 console.log("Error - "+result.error.message);
             }
@@ -192,6 +200,7 @@ angular.module('starter.controllers', [])
     //$ionicLoading.show({ template: 'Cargando...' });
     function initialize() {
         $rootScope.TITLE = "Institucionales";
+        $rootScope.VISIBLE = false;
         console.log('googles init called');
         var feed = new google.feeds.Feed("http://feeds.feedburner.com/gbcInstitucionales");
         feed.setNumEntries(10);
@@ -200,7 +209,7 @@ angular.module('starter.controllers', [])
             if(!result.error) {
                 $rootScope.entries = result.feed.entries;
                 console.log('move');
-                $location.path('/app/home');
+                //$location.path('/app/home');
             } else {
                 console.log("Error - "+result.error.message);
             }
@@ -217,6 +226,7 @@ angular.module('starter.controllers', [])
     //$ionicLoading.show({ template: 'Cargando...' });
     function initialize() {
         $rootScope.TITLE = "Infraestructura y Vialidad";
+        $rootScope.VISIBLE = false;
         console.log('googles init called');
         var feed = new google.feeds.Feed("http://feeds.feedburner.com/gbcInfraestructuraYVialidad");
         feed.setNumEntries(10);
@@ -225,7 +235,7 @@ angular.module('starter.controllers', [])
             if(!result.error) {
                 $rootScope.entries = result.feed.entries;
                 console.log('move');
-                $location.path('/app/home');
+                //$location.path('/app/home');
             } else {
                 console.log("Error - "+result.error.message);
             }
@@ -240,10 +250,18 @@ angular.module('starter.controllers', [])
 
 .controller('EntryCtrl', ['$scope', '$rootScope', '$location', '$stateParams', function($scope, $rootScope, $location, $stateParams) {
     console.log('EntryCtrl called');
+    $rootScope.VISIBLE = false;
     if(!$rootScope.entries) $location.path('/');
     $rootScope.notHome = true;
     $scope.index = $stateParams.index;
     $scope.entry = $rootScope.entries[$scope.index];
-    $scope.readEntry = function(e) { window.open(e.link, "_blank"); };
-}])
-;
+    $scope.readEntry = function(e) { window.open(e.link,'_system', 'location=no'); return false;};
+    
+    var URL = "http://twitter.com/home?status=He%20leido%20%20esta%20noticia:%20";
+    var HT = '%20%23GobiernoDeCarabobo';
+    $scope.tweetEntry = function(e){ window.open(URL + e.link + HT, '_system', 'location=no'); return false;};
+
+    var URLF = ' http://www.facebook.com/sharer.php?u=';
+    var TF = '/&t=He%20leido%20esta%2noticia: ';
+    $scope.fbEntry = function(e){ window.open(URLF + e.link + TF, '_system', 'location=no'); return false;};
+}]);
