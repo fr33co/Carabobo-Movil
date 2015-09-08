@@ -17,11 +17,6 @@ angular.module('starter.controllers', [])
     //$ionicLoading.show({ template: 'Cargando...' });
     function initialize() {
         $rootScope.TITLE = "Carabobo Movíl";
-        $rootScope.VISIBLE = false;
-        $rootScope.ocultar = function(){
-          $rootScope.VISIBLE = !$rootScope.VISIBLE;
-          }
-        
         console.log('googles init called');
         var feed = new google.feeds.Feed("http://carabobo.gob.ve/feed/");
         feed.setNumEntries(10);
@@ -260,13 +255,13 @@ angular.module('starter.controllers', [])
     $rootScope.notHome = true;
     $scope.index = $stateParams.index;
     $scope.entry = $rootScope.entries[$scope.index];
-    $scope.readEntry = function(e) { window.open(e.link, "_blank"); };
+    $scope.readEntry = function(e) { window.open(e.link, '_blank'); };
     
     var URL = "http://twitter.com/home?status=He%20leido%20%20esta%20noticia:%20";
     var HT = '%20%23GobiernoDeCarabobo';
-    $scope.tweetEntry = function(e){ window.open(URL + e.link + HT, "_blank");};
+    $scope.tweetEntry = function(e){ window.open(URL + e.link + HT, '_system', 'location=no'); return false;};
 
     var URLF = ' http://www.facebook.com/sharer.php?u=';
     var TF = '/&t=He%20leido%20esta%2noticia: ';
-    $scope.fbEntry = function(e){ window.open(URLF + e.link + TF, "_blank")}
+    $scope.fbEntry = function(e){ window.open(URLF + e.link + TF, '_system', 'location=no'); return false;};
 }]);
