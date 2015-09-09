@@ -3,9 +3,10 @@
 		<ion-list class="item-text-wrap">
 			<ion-item ng-repeat="entry in entries" class="item item-thumbnail-left card" href="#app/entry/{{$index}}">
 				<img ng-src="{{ entry.content | urlFilter }}">
-				<p style="margin-bottom: 1em; color: #FFF" > <span style="background-color:#306bba; border-radius: 4px; padding: 4px;">{{entry.categories[0]}}</span> </p>
-				<h2>{{entry.title}}</h2>
-				 <p>{{entry.publishedDate.substring(4, 22)}}</p>
+				<p style="margin-bottom: 1em; color: #FFF" > <span style="background-color:#3276b8; border-radius: 4px; padding: 4px; font-weight: bold">{{entry.categories[0]}}</span> </p>
+				<h2><strong>{{entry.title}}</strong></h2>
+				 <p>{{entry.publishedDate | dateFormat }}</p>
+				 <p><em>{{entry.contentSnippet}}</em></p>
 			</ion-item>
 			</ion-item>
 		</ion-list>
