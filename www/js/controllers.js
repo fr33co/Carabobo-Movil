@@ -2,6 +2,7 @@ angular.module('starter.controllers', [])
 
 .controller('AppCtrl', function($scope, $ionicModal, $timeout) {
     $scope.loginData = {};
+    $ionicConfigProvider.views.maxCache(0);
     $ionicModal.fromTemplateUrl('templates/login.html', {
         scope: $scope
     }).then(function(modal) { $scope.modal = modal; });
@@ -11,6 +12,7 @@ angular.module('starter.controllers', [])
         console.log('Doing login', $scope.loginData);
         $timeout(function() { $scope.closeLogin(); }, 1000);
     };
+
 })
 
 .controller('HomeCtrl', ['$ionicPlatform', '$scope', '$rootScope', '$cordovaNetwork', '$ionicLoading', '$location', function($ionicPlatform, $scope, $rootScope, $cordovaNetwork, $ionicLoading, $location) {
