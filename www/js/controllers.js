@@ -2,6 +2,7 @@ angular.module('starter.controllers', [])
 
 .controller('AppCtrl', function($scope, $ionicModal, $timeout) {
     $scope.loginData = {};
+    $ionicConfigProvider.views.maxCache(0);
     $ionicModal.fromTemplateUrl('templates/login.html', {
         scope: $scope
     }).then(function(modal) { $scope.modal = modal; });
@@ -11,12 +12,12 @@ angular.module('starter.controllers', [])
         console.log('Doing login', $scope.loginData);
         $timeout(function() { $scope.closeLogin(); }, 1000);
     };
+
 })
 
 .controller('HomeCtrl', ['$ionicPlatform', '$scope', '$rootScope', '$cordovaNetwork', '$ionicLoading', '$location', function($ionicPlatform, $scope, $rootScope, $cordovaNetwork, $ionicLoading, $location) {
     //$ionicLoading.show({ template: 'Cargando...' });
     function initialize() {
-        $rootScope.TITLE = "Carabobo Movíl";
         console.log('googles init called');
         var feed = new google.feeds.Feed("http://carabobo.gob.ve/feed/");
         feed.setNumEntries(10);
@@ -43,8 +44,6 @@ angular.module('starter.controllers', [])
 .controller('DesarrolloCtrl', ['$ionicPlatform', '$scope', '$rootScope', '$cordovaNetwork', '$ionicLoading', '$location', function($ionicPlatform, $scope, $rootScope, $cordovaNetwork, $ionicLoading, $location) {
     //$ionicLoading.show({ template: 'Cargando...' });
     function initialize() {
-        $rootScope.TITLE = "Desarrollo Social";
-        $rootScope.VISIBLE = false;
         console.log('googles init called');
         var feed = new google.feeds.Feed("http://feeds.feedburner.com/gbcdesarrollosocial");
         feed.setNumEntries(10);
@@ -69,8 +68,6 @@ angular.module('starter.controllers', [])
 .controller('SaludCtrl', ['$ionicPlatform', '$scope', '$rootScope', '$cordovaNetwork', '$ionicLoading', '$location', function($ionicPlatform, $scope, $rootScope, $cordovaNetwork, $ionicLoading, $location) {
     //$ionicLoading.show({ template: 'Cargando...' });
     function initialize() {
-        $rootScope.TITLE = "Salud";
-        $rootScope.VISIBLE = false;
         console.log('googles init called');
         var feed = new google.feeds.Feed("http://feeds.feedburner.com/gbcSalud");
         feed.setNumEntries(10);
@@ -95,8 +92,6 @@ angular.module('starter.controllers', [])
 .controller('DeporteCtrl', ['$ionicPlatform', '$scope', '$rootScope', '$cordovaNetwork', '$ionicLoading', '$location', function($ionicPlatform, $scope, $rootScope, $cordovaNetwork, $ionicLoading, $location) {
     //$ionicLoading.show({ template: 'Cargando...' });
     function initialize() {
-        $rootScope.TITLE = "Deportes";
-        $rootScope.VISIBLE = false;
         console.log('googles init called');
         var feed = new google.feeds.Feed("http://feeds.feedburner.com/gbcdeportes");
         feed.setNumEntries(10);
@@ -121,8 +116,6 @@ angular.module('starter.controllers', [])
 .controller('EducacionCtrl', ['$ionicPlatform', '$scope', '$rootScope', '$cordovaNetwork', '$ionicLoading', '$location', function($ionicPlatform, $scope, $rootScope, $cordovaNetwork, $ionicLoading, $location) {
     //$ionicLoading.show({ template: 'Cargando...' });
     function initialize() {
-        $rootScope.TITLE = "Educación";
-        $rootScope.VISIBLE = false;
         console.log('googles init called');
         var feed = new google.feeds.Feed("http://feeds.feedburner.com/gbceducacion");
         feed.setNumEntries(10);
@@ -147,8 +140,6 @@ angular.module('starter.controllers', [])
 .controller('SeguridadCtrl', ['$ionicPlatform', '$scope', '$rootScope', '$cordovaNetwork', '$ionicLoading', '$location', function($ionicPlatform, $scope, $rootScope, $cordovaNetwork, $ionicLoading, $location) {
     //$ionicLoading.show({ template: 'Cargando...' });
     function initialize() {
-        $rootScope.TITLE = "Seguridad Ciudadana";
-        $rootScope.VISIBLE = false;
         console.log('googles init called');
         var feed = new google.feeds.Feed("http://feeds.feedburner.com/gbcSeguridadCiudadana");
         feed.setNumEntries(10);
@@ -173,8 +164,6 @@ angular.module('starter.controllers', [])
 .controller('CultureCtrl', ['$ionicPlatform', '$scope', '$rootScope', '$cordovaNetwork', '$ionicLoading', '$location', function($ionicPlatform, $scope, $rootScope, $cordovaNetwork, $ionicLoading, $location) {
     //$ionicLoading.show({ template: 'Cargando...' });
     function initialize() {
-        $rootScope.TITLE = "Cultura";
-        $rootScope.VISIBLE = false;
         console.log('googles init called');
         var feed = new google.feeds.Feed("http://feeds.feedburner.com/gbcCultura");
         feed.setNumEntries(10);
@@ -199,8 +188,6 @@ angular.module('starter.controllers', [])
 .controller('InstitucionalesCtrl', ['$ionicPlatform', '$scope', '$rootScope', '$cordovaNetwork', '$ionicLoading', '$location', function($ionicPlatform, $scope, $rootScope, $cordovaNetwork, $ionicLoading, $location) {
     //$ionicLoading.show({ template: 'Cargando...' });
     function initialize() {
-        $rootScope.TITLE = "Institucionales";
-        $rootScope.VISIBLE = false;
         console.log('googles init called');
         var feed = new google.feeds.Feed("http://feeds.feedburner.com/gbcInstitucionales");
         feed.setNumEntries(10);
@@ -225,8 +212,6 @@ angular.module('starter.controllers', [])
 .controller('InfraestructuraCtrl', ['$ionicPlatform', '$scope', '$rootScope', '$cordovaNetwork', '$ionicLoading', '$location', function($ionicPlatform, $scope, $rootScope, $cordovaNetwork, $ionicLoading, $location) {
     //$ionicLoading.show({ template: 'Cargando...' });
     function initialize() {
-        $rootScope.TITLE = "Infraestructura y Vialidad";
-        $rootScope.VISIBLE = false;
         console.log('googles init called');
         var feed = new google.feeds.Feed("http://feeds.feedburner.com/gbcInfraestructuraYVialidad");
         feed.setNumEntries(10);
@@ -250,7 +235,6 @@ angular.module('starter.controllers', [])
 
 .controller('EntryCtrl', ['$scope', '$rootScope', '$location', '$stateParams', function($scope, $rootScope, $location, $stateParams) {
     console.log('EntryCtrl called');
-    $rootScope.VISIBLE = false;
     if(!$rootScope.entries) $location.path('/');
     $rootScope.notHome = true;
     $scope.index = $stateParams.index;
