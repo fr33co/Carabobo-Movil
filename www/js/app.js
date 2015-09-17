@@ -1,6 +1,6 @@
 angular.module('starter', ['ionic', 'ngCordova','starter.controllers', 'starter.filter'])
 
-.run(function($ionicPlatform, $rootScope, $location) {
+.run(function($ionicPlatform, $rootScope, $location,$ionicPopup, $cordovaNetwork) {
     $ionicPlatform.ready(function() {
         if (window.cordova && window.cordova.plugins.Keyboard) {
             cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
@@ -8,6 +8,20 @@ angular.module('starter', ['ionic', 'ngCordova','starter.controllers', 'starter.
         if (window.StatusBar) {
             StatusBar.styleDefault();
         }
+        
+        /*if(window.Connection){      
+            if(window.connection.type === Connection.NONE){
+                $ionicPopup.confirm({
+                    title: "Sin conexión de Datos",
+                    content: "Para continuar, por favor conectese a su WiFi o Datos Móviles"
+                })
+                .then(function(result){
+                    if(!result){
+                        $ionic.Platform.exitApp();
+                    }
+                })                
+            }
+        }*/
     });
 })
 
