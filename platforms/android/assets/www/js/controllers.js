@@ -11,6 +11,7 @@ angular.module('starter.controllers', [])
         console.log('Doing login', $scope.loginData);
         $timeout(function() { $scope.closeLogin(); }, 1000);
     };
+
 })
 
 .controller('HomeCtrl', ['$ionicPlatform', '$scope', '$rootScope', '$cordovaNetwork', '$ionicLoading', '$location', function($ionicPlatform, $scope, $rootScope, $cordovaNetwork, $ionicLoading, $location) {
@@ -22,17 +23,14 @@ angular.module('starter.controllers', [])
         feed.load(function(result) {
             $ionicLoading.hide();
             if(!result.error) {
-
                 $rootScope.entries = result.feed.entries;
-                console.log('move');
-               //$location.path('/app/home');
+                console.log('Home Feeds');   
             } else {
                 console.log("Error - "+result.error.message);
             }
         });
     }
     $ionicPlatform.ready(function() {
-
         console.log("Started up!!");
         google.load("feeds", "1",{callback:initialize});
         $ionicLoading.hide();
@@ -49,8 +47,7 @@ angular.module('starter.controllers', [])
             $ionicLoading.hide();
             if(!result.error) {
                 $rootScope.entries = result.feed.entries;
-                console.log('move');
-               //$location.path('/app/home');
+                console.log('Desarrollo Social Feeds');
             } else {
                 console.log("Error - "+result.error.message);
             }
@@ -74,7 +71,7 @@ angular.module('starter.controllers', [])
             if(!result.error) {
                 $rootScope.entries = result.feed.entries;
                 console.log('move');
-                //$location.path('/app/home');
+                
             } else {
                 console.log("Error - "+result.error.message);
             }

@@ -2,7 +2,6 @@ angular.module('starter.controllers', [])
 
 .controller('AppCtrl', function($scope, $ionicModal, $timeout) {
     $scope.loginData = {};
-    $ionicConfigProvider.views.maxCache(0);
     $ionicModal.fromTemplateUrl('templates/login.html', {
         scope: $scope
     }).then(function(modal) { $scope.modal = modal; });
@@ -24,17 +23,14 @@ angular.module('starter.controllers', [])
         feed.load(function(result) {
             $ionicLoading.hide();
             if(!result.error) {
-
                 $rootScope.entries = result.feed.entries;
-                console.log('move');
-               //$location.path('/app/home');
+                console.log('Home Feeds');   
             } else {
                 console.log("Error - "+result.error.message);
             }
         });
     }
     $ionicPlatform.ready(function() {
-
         console.log("Started up!!");
         google.load("feeds", "1",{callback:initialize});
         $ionicLoading.hide();
@@ -51,8 +47,7 @@ angular.module('starter.controllers', [])
             $ionicLoading.hide();
             if(!result.error) {
                 $rootScope.entries = result.feed.entries;
-                console.log('move');
-               //$location.path('/app/home');
+                console.log('Desarrollo Social Feeds');
             } else {
                 console.log("Error - "+result.error.message);
             }
@@ -76,7 +71,7 @@ angular.module('starter.controllers', [])
             if(!result.error) {
                 $rootScope.entries = result.feed.entries;
                 console.log('move');
-                //$location.path('/app/home');
+                
             } else {
                 console.log("Error - "+result.error.message);
             }
