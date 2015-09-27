@@ -14,26 +14,46 @@ angular.module('starter.controllers', [])
 
 })
 
-.controller('HomeCtrl', ['$ionicPlatform', '$scope', '$rootScope', '$cordovaNetwork', '$ionicLoading', '$location', function($ionicPlatform, $scope, $rootScope, $cordovaNetwork, $ionicLoading, $location) {
+.controller('HomeCtrl', ['$ionicPlatform', '$scope', '$rootScope', '$cordovaNetwork', '$ionicLoading', '$location', '$timeout', function($ionicPlatform, $scope, $rootScope, $cordovaNetwork, $ionicLoading, $location, $timeout) {
     //$ionicLoading.show({ template: 'Cargando...' });
+
+    $scope.msjErrror = false;
     function initialize() {
         console.log('googles init called');
         var feed = new google.feeds.Feed("http://carabobo.gob.ve/feed/");
         feed.setNumEntries(10);
         feed.load(function(result) {
-            $ionicLoading.hide();
             if(!result.error) {
                 $rootScope.entries = result.feed.entries;
-                console.log('Home Feeds');   
+                console.log('Home Feeds');
+                $ionicLoading.hide();
             } else {
                 console.log("Error - "+result.error.message);
+                $scope.msjErrror = true;
+                $ionicLoading.hide();
             }
         });
     }
+
+    $scope.doRefresh = function(){
+        console.log('Trying Refresh')
+        google.load("feeds", "1",{callback:initialize});
+        $scope.$broadcast('scroll.refreshComplete');        
+    }
+
+    $scope.checkNetwork = function(){
+        console.log('checking network');
+        $ionicLoading.show({
+            template: '<ion-spinner icon="android"></ion-spinner>',
+            duration: 4000
+        });
+        google.load("feeds", "1",{callback:initialize});
+    }
+    
     $ionicPlatform.ready(function() {
         console.log("Started up!!");
-        google.load("feeds", "1",{callback:initialize});
-        $ionicLoading.hide();
+        $scope.checkNetwork(); 
+        //$ionicLoading.hide();
     });
 }])
 

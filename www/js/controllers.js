@@ -14,26 +14,50 @@ angular.module('starter.controllers', [])
 
 })
 
-.controller('HomeCtrl', ['$ionicPlatform', '$scope', '$rootScope', '$cordovaNetwork', '$ionicLoading', '$location', function($ionicPlatform, $scope, $rootScope, $cordovaNetwork, $ionicLoading, $location) {
-    //$ionicLoading.show({ template: 'Cargando...' });
+.controller('HomeCtrl', ['$ionicPlatform', '$scope', '$rootScope', '$cordovaNetwork', '$ionicLoading', '$http', '$timeout', function($ionicPlatform, $scope, $rootScope, $cordovaNetwork, $ionicLoading, $http, $timeout) {
+    $rootScope.msj = false;
     function initialize() {
         console.log('googles init called');
+        $rootScope.msj = true;
         var feed = new google.feeds.Feed("http://carabobo.gob.ve/feed/");
+        console.log($rootScope.msj);         
         feed.setNumEntries(10);
         feed.load(function(result) {
-            $ionicLoading.hide();
             if(!result.error) {
+                $rootScope.msj = false;
                 $rootScope.entries = result.feed.entries;
-                console.log('Home Feeds');   
+                console.log('Home Feeds');
+                $ionicLoading.hide();
+                console.log($rootScope.msj + 'if');
             } else {
-                console.log("Error - "+result.error.message);
-            }
+                $rootScope.msj = true;
+                console.log($rootScope.msj + 'else');
+                console.log("Error - "+result.error.message); 
+                $ionicLoading.hide();      
+                }
         });
     }
+
+    $scope.doRefresh = function(){
+        console.log('Trying Refresh')
+        google.load("feeds", "1",{callback:initialize});
+        $scope.$broadcast('scroll.refreshComplete');        
+    }
+
+    $scope.checkNetwork = function(){
+        console.log('checking network');
+        $ionicLoading.show({
+            template: '<ion-spinner icon="android"></ion-spinner>',
+            duration: 4000
+        });
+        google.load("feeds", "1",{callback:initialize});
+        console.log($rootScope.msj);
+    }
+    
     $ionicPlatform.ready(function() {
         console.log("Started up!!");
-        google.load("feeds", "1",{callback:initialize});
-        $ionicLoading.hide();
+        $scope.checkNetwork(); 
+        //$ionicLoading.hide();
     });
 }])
 

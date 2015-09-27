@@ -1,5 +1,10 @@
 <ion-view title="Carabobo Móvil" cache-view="false">
 	<ion-content class="padding">
+			<ion-refresher 
+				pulling-text = "Actualizar Noticias"
+				on-refresh = "doRefresh()"
+				spinner = "android">
+			</ion-refresher>
 			<ion-list class="item-text-wrap">
 			<ion-item ng-repeat="entry in entries | filter:parametro" class="item item-thumbnail-left card" href="#app/entry/{{$index}}">
 
@@ -8,6 +13,22 @@
 				<h2><strong>{{entry.title}}</strong></h2>
 				 <p>{{entry.publishedDate | dateFormat }}</p>
 				 <p><em>{{entry.contentSnippet}}</em></p>
+			</ion-item>
+			<ion-item ng-show="(msj && !entries)" class="card item-text-wrap">
+				<div class="item item-body">
+					<h2 style="color: #3276b8; text-align: center; font-weight: bold"> Error al cargar noticias</h2>
+					<p>Ha ocurrido un error al cargar las noticias, verifique su conexion a datos moviles o WiFi</p>
+				</div>
+				<div class="item tabs tabs-secondary tabs-icon-left">
+					 <a class="tab-item" href="#">
+      					<i class="icon ion-android-close"></i>
+      						Salir
+    				</a>
+    				 <a class="tab-item" href="#" ng-click="checkNetwork()">
+      					<i class="icon ion-android-refresh"></i>
+      						Intentar Nuevamente
+    				</a>
+				</div>
 			</ion-item>
 		</ion-list>
 	</ion-content>
