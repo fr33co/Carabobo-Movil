@@ -15,23 +15,23 @@ angular.module('starter.controllers', [])
 })
 
 .controller('HomeCtrl', ['$ionicPlatform', '$scope', '$rootScope', '$cordovaNetwork', '$ionicLoading', '$http', '$timeout', function($ionicPlatform, $scope, $rootScope, $cordovaNetwork, $ionicLoading, $http, $timeout) {
-    $rootScope.msj = false;
+    //$rootScope.msj = false;
     function initialize() {
         console.log('googles init called');
-        $rootScope.msj = true;
+        //$rootScope.msj = true;
         var feed = new google.feeds.Feed("http://carabobo.gob.ve/feed/");
-        console.log($rootScope.msj);         
+        //console.log($rootScope.msj);         
         feed.setNumEntries(10);
         feed.load(function(result) {
             if(!result.error) {
-                $rootScope.msj = false;
+                //$rootScope.msj = false;
                 $rootScope.entries = result.feed.entries;
                 console.log('Home Feeds');
                 $ionicLoading.hide();
-                console.log($rootScope.msj + 'if');
+                //console.log($rootScope.msj + 'if');
             } else {
-                $rootScope.msj = true;
-                console.log($rootScope.msj + 'else');
+                //$rootScope.msj = true;
+                //console.log($rootScope.msj + 'else');
                 console.log("Error - "+result.error.message); 
                 $ionicLoading.hide();      
                 }
@@ -51,8 +51,13 @@ angular.module('starter.controllers', [])
             duration: 4000
         });
         google.load("feeds", "1",{callback:initialize});
-        console.log($rootScope.msj);
+        //console.log($rootScope.msj);
     }
+
+
+    $scope.exit = function(){
+        ionic.Platform.exitApp();
+    }    
     
     $ionicPlatform.ready(function() {
         console.log("Started up!!");
