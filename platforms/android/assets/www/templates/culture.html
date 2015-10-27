@@ -1,13 +1,19 @@
 <ion-view title="Cultura" cache-view="false">
 	<ion-content class="padding">
 	<ion-list class="item-text-wrap">
-			<ion-item ng-repeat="entry in entries" class="item item-thumbnail-left card" href="#app/entry/{{$index}}">
-				<img ng-src="{{ entry.content | urlFilter }}">
-				<p style="margin-bottom: 1em; color: #FFF" > <span style="background-color:#3276b8; border-radius: 4px; padding: 4px; font-weight: bold">{{entry.categories[0]}}</span> </p>
-				<h2><strong>{{entry.title}}</strong></h2>
-				 <p>{{entry.publishedDate | dateFormat }}</p>
-				 <p><em>{{entry.contentSnippet}}</em></p>
-			</ion-item>
+			<ion-item ng-repeat="entry in entries | filter:parametro" class="item card" href="#app/entry/{{$index}}">
+
+				<!--REDISENO DEL LAS CARTAS-->
+				<div class="item item-divider">
+					<p style="margin-bottom: 1em; color: #FFF" > <span style="background-color:#3276b8; border-radius: 4px; padding: 4px; font-weight: bold">{{entry.categories[0]}}</span> </p>
+					<p>{{entry.publishedDate | dateFormat }}</p>
+				</div>
+
+				<div class="item item-body">
+					<img ng-src="{{ entry.content | urlFilter }}">
+					<h2><strong>{{entry.title}}</strong></h2>
+				 	<p><em>{{entry.contentSnippet}}</em></p>
+				</div>
 		</ion-list>
 		</ion-list>
 	</ion-content>
