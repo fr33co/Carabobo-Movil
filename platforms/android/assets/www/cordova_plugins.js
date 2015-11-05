@@ -47,6 +47,24 @@ module.exports = [
         "clobbers": [
             "Connection"
         ]
+    },
+    {
+        "file": "plugins/cordova-plugin-x-socialsharing/www/SocialSharing.js",
+        "id": "cordova-plugin-x-socialsharing.SocialSharing",
+        "clobbers": [
+            "window.plugins.socialsharing"
+        ]
+    },
+    {
+        "file": "plugins/cordova-plugin-x-toast/www/Toast.js",
+        "id": "cordova-plugin-x-toast.Toast",
+        "clobbers": [
+            "window.plugins.toast"
+        ]
+    },
+    {
+        "file": "plugins/cordova-plugin-x-toast/test/tests.js",
+        "id": "cordova-plugin-x-toast.tests"
     }
 ];
 module.exports.metadata = 
@@ -57,7 +75,9 @@ module.exports.metadata =
     "cordova-plugin-splashscreen": "2.1.0",
     "cordova-plugin-whitelist": "1.0.0",
     "org.apache.cordova.inappbrowser": "0.6.0",
-    "org.apache.cordova.network-information": "0.2.15"
+    "org.apache.cordova.network-information": "0.2.15",
+    "cordova-plugin-x-socialsharing": "5.0.6",
+    "cordova-plugin-x-toast": "2.2.1"
 }
 // BOTTOM OF METADATA
 });

@@ -31,6 +31,14 @@
                         {
                             "xml": "<feature name=\"NetworkStatus\"><param name=\"android-package\" value=\"org.apache.cordova.networkinformation.NetworkManager\" /></feature>",
                             "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"SocialSharing\"><param name=\"android-package\" value=\"nl.xservices.plugins.SocialSharing\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Toast\"><param name=\"android-package\" value=\"nl.xservices.plugins.Toast\" /></feature>",
+                            "count": 1
                         }
                     ]
                 }
@@ -40,6 +48,10 @@
                     "/*": [
                         {
                             "xml": "<uses-permission android:name=\"android.permission.ACCESS_NETWORK_STATE\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.WRITE_EXTERNAL_STORAGE\" />",
                             "count": 1
                         }
                     ]
@@ -64,6 +76,12 @@
             "PACKAGE_NAME": "com.ionicframework.carabobomovil785092"
         },
         "org.apache.cordova.network-information": {
+            "PACKAGE_NAME": "com.ionicframework.carabobomovil785092"
+        },
+        "cordova-plugin-x-socialsharing": {
+            "PACKAGE_NAME": "com.ionicframework.carabobomovil785092"
+        },
+        "cordova-plugin-x-toast": {
             "PACKAGE_NAME": "com.ionicframework.carabobomovil785092"
         }
     },
