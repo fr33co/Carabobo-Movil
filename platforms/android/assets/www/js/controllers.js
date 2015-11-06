@@ -257,7 +257,7 @@ angular.module('starter.controllers', [])
     });
 }])
 
-.controller('EntryCtrl', ['$scope', '$rootScope', '$location', '$stateParams', function($scope, $rootScope, $location, $stateParams) {
+.controller('EntryCtrl', ['$scope', '$rootScope', '$location', '$stateParams', '$cordovaSocialSharing', '$cordovaToast', function($scope, $rootScope, $location, $stateParams, $cordovaSocialSharing, $cordovaToast) {
     console.log('EntryCtrl called');
     if(!$rootScope.entries) $location.path('/');
     $rootScope.notHome = true;
@@ -266,10 +266,16 @@ angular.module('starter.controllers', [])
     $scope.readEntry = function(e) { window.open(e.link,'_system', 'location=no'); return false;};
     
     $scope.ShareSocial = function(e){
-        
-    }
+        $cordovaSocialSharing.share("He leido esta noticia" + e.title," ", null, e.link)
+        .then(function(success){
+                $cordovaToast.showShortBottom('Noticia compartida con exito');           
+            }, function(error){
+                $cordovaToast.showShortBottom('Problemas al compartir noticia, intentelo nuevamente');
+            });
+            
+    };
     /*
-    Botones de Compartir    
+    Botones de Compartir  Twitter & Facebook
     var URL = "http://twitter.com/home?status=He%20leido%20%20esta%20noticia:%20";
     var HT = '%20%23GobiernoDeCarabobo';
     $scope.tweetEntry = function(e){ window.open(URL + e.link + HT, '_system', 'location=no'); return false;};

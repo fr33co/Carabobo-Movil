@@ -266,15 +266,14 @@ angular.module('starter.controllers', [])
     $scope.readEntry = function(e) { window.open(e.link,'_system', 'location=no'); return false;};
     
     $scope.ShareSocial = function(e){
-        $cordovaSocialSharing
-            .share('He leido esta noticia' + e.title, null, null, e.link)
-            .then(function(success){
+        $cordovaSocialSharing.share("He leido esta noticia" + e.title," ", null, e.link)
+        .then(function(success){
                 $cordovaToast.showShortBottom('Noticia compartida con exito');           
             }, function(error){
                 $cordovaToast.showShortBottom('Problemas al compartir noticia, intentelo nuevamente');
             });
             
-    }
+    };
     /*
     Botones de Compartir  Twitter & Facebook
     var URL = "http://twitter.com/home?status=He%20leido%20%20esta%20noticia:%20";
