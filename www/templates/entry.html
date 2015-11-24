@@ -1,20 +1,20 @@
 <ion-view title="{{entry.title}}" cache-view="false">
-    <ion-content class="padding">
+  <ion-content class="padding">
         <h2>{{entry.title}}</h2>
-		<p><b>Publicado:</b> {{entry.publishedDate.substring(4,22)}}</p>
-		<div ng-bind-html="entry.content" style="text-align: justify;"></div>
-		<!--
-		<button class="button button-block button-calm" ng-click="tweetEntry(entry)">
-			<pre><i class="icon ion-social-twitter positive"></i>     Compartir en Twitter</pre>
-		</button>
-	-->
-		<button class="button button-block button-positive item-icon-left" ng-click="ShareSocial(entry)">
-			<i class="icon ion-android-share-alt"></i>
-			Compartir Esta Noticia
-		</button>
-		<button class="button button-block button-stable" ng-click="readEntry(entry)">
-			Ir a la Pagina Web
-		</button>
-		
+		      <p><b>Publicado:</b> {{entry.publishedDate.substring(4,22)}}</p>
+		      <div ng-bind-html="entry.content" style="text-align: justify;"></div>
 	</ion-content>
+  <ion-footer>
+      <ion-tabs class="tabs-secundary tabs-icon-left tabs-background-positive tabs-color-light">
+        <a class="tab-item" ng-click="ShareSocial(entry)">
+          <i class="icon ion-android-share-alt"></i>
+          Compartir Esta Noticia
+        </a>
+
+        <a class="tab-item" ng-click="readEntry(entry)">
+          <i class="icon ion-android-globe"></i>
+          Ir a la Pagina Web
+        </a>
+      </ion-tabs>
+  </ion-footer>
 </ion-view>
